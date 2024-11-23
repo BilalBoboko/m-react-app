@@ -1,0 +1,86 @@
+/* Основной стиль кнопки */
+.dark-mode-btn {
+	position: relative;
+	width: 80px;
+	height: 35px;
+	background: #f4f4f4;
+	border: none;
+	border-radius: 20px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  body.dark .dark-mode-btn {
+	background: #333;
+  }
+  
+  /* Общие стили для иконок */
+  .icon {
+	width: 20px;
+	height: 20px;
+	 /* Полупрозрачность для неактивной иконки */
+	transition: opacity 0.3s ease;
+  }
+  
+  .sun-icon {
+	margin-left: 10px;
+  }
+  
+  .moon-icon {
+	margin-right: 10px;
+  }
+  
+  /* Активная иконка */
+  .slider-icon {
+	width: 20px;
+	height: 20px;
+	z-index: 2;
+	transition: transform 0.3s ease;
+  }
+  
+  /* Слайдер */
+  .slider {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 29px;
+	height: 29px;
+	border-radius: 50%;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.3s ease;
+	z-index: 1;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .slider-light {
+	transform: translateX(0); /* Слайдер влево для светлой темы */
+  }
+  
+  .slider-dark {
+	transform: translateX(45px); /* Слайдер вправо для тёмной темы */
+  }
+  
+  /* Полупрозрачность неактивной иконки */
+  body.dark .moon-icon {
+	opacity: 1;
+  }
+  
+  body.dark .sun-icon {
+	opacity: 0.5;
+  }
+  
+  body:not(.dark) .moon-icon {
+	opacity: 0.5;
+  }
+  
+  body:not(.dark) .sun-icon {
+	opacity: 1;
+  }
+  
